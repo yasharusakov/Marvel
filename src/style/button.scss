@@ -1,0 +1,16 @@
+@import './variables.scss';
+
+.load-more {
+    transition: all 0.4s ease;
+    width: 150px;
+    height: 40px;
+    background: rgba($main-color, 0.85);
+    border: 2px solid $black;
+    color: $white;
+    font-size: 19px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    &:disabled {
+        background: rgba($main-color, 0.6);
+    }
+}

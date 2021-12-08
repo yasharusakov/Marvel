@@ -1,0 +1,10 @@
+@import '../../style/style.scss';
+
+.App {
+    max-width: 1370px;
+    margin: 0 auto;
+    padding: 30px;
+    @media screen and (max-width: 365px) {
+        padding: 5px;
+    }
+}

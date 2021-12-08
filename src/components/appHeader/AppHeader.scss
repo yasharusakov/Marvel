@@ -1,0 +1,129 @@
+@import '../../style/variables.scss';
+
+.header {
+    background: $main-color;
+    border-top-left-radius: 10;
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 60px;
+        padding: 0 15px;
+        position: relative;
+    }
+
+    &__website-name {
+        font-size: 35px;
+        letter-spacing: 0.5px;
+        color: $white;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        margin-right: 10px;
+        @media screen and (max-width: 835px) {
+            font-size: 25px;
+        }
+    }
+
+    &__menu {
+        display: none;
+        @media screen and (max-width: 835px) {
+            display: block;
+            .menu__icon {
+                position: relative;
+                width: 30px;
+                height: 18px;
+                &::before, &::after, span {
+                    width: 100%;
+                    height: 20%;
+                    background: $white;
+                    position: absolute;
+                }
+
+                &::before, &::after {
+                    content: "";
+                }
+
+                &::before {
+                    top: 0;
+                }
+
+                &::after {
+                    bottom: 0;
+                }
+
+                span {
+                    top: 50%;
+                    transform: translateY(-50%) scale(1);
+                }
+            }
+        }
+    }
+
+    &__menu-links {
+        @media screen and (max-width: 835px) {
+            transition: all .5s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            padding-top: 30px;
+            opacity: 0;
+            visibility: hidden;
+            .header__links {
+                flex-direction: column;
+                justify-content: left;
+                align-items: left;
+                position: relative;
+                span {
+                    position: absolute;
+                    right: 5%;
+                    top: 33px;
+                    width: 35px;
+                    height: 18px;
+                    &::before, &::after {
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        background: $white;
+                        width: 100%;
+                        height: 40%;
+                    }
+                    &::before {
+                        top: 0;
+                        transform: translateY(-50%) rotate(45deg);
+                    }
+                    &::after {
+                        bottom: 0;
+                        transform: translateY(-50%) rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    &__menu-links.opened {
+        @media screen and (max-width: 835px) {
+            visibility: visible;
+            opacity: 1;
+            background: $main-color;
+        }
+    }
+
+    &__links {
+        display: flex;
+        li {
+            margin: 0 10px;
+            a {
+                transition: color .3s ease;
+                font-size: 30px;
+                &:hover {
+                    color: $black;
+                }
+            }
+        }
+    }
+}
