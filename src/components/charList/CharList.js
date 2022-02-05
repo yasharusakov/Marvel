@@ -19,7 +19,7 @@ export default function CharList() {
         getAllCharacters(offset)
             .then(onCharListLoaded)
             .then(() => setProcess('confirmed'));
-    }
+    }    
 
     useEffect(() => {
         onRequest(offset, true);
